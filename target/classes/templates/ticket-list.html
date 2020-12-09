@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Tickets</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div id="whole_table" th:switch="${Tickets}">
+    <h2 style="color: white; text-align: center;" th:case="null">No Tickets found!</h2>
+    <div th:case="*">
+        <h2 style="color: white; text-align: center;" >Tickets</h2>
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">date</th>
+                <th scope="col">penaltyid</th>
+                <th scope="col">inspectorid</th>
+                <th scope="col">personid</th>
+                <th scope="col">payed</th>
+                <th scope="col">cost</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="Ticket:${Tickets}">
+                <td th:text="${Ticket.id}"></td>
+                <td th:text="${Ticket.ticketdate}"></td>
+                <td th:text="${Ticket.penaltyid}"></td>
+                <td th:text="${Ticket.inspectorid}"></td>
+                <td th:text="${Ticket.personid}"></td>
+                <td th:text="${Ticket.payed}"></td>
+                <td th:text="${Ticket.cost}"></td>
+                <td style="cursor: pointer; text-align: center;" th:onclick="|window.location.href='@{Ticket-update/{id}(id=${Ticket.id})}'|">Edit</a></td>
+                <td style="cursor: pointer; text-align: center;" th:onclick="|window.location.href='@{Ticket-delete/{id}(id=${Ticket.id})}'|">Delete</a></td>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col"><a class="btn btn-primary btn-block" href="/Ticket-create">Create Ticket</a></div>
+        <div class="col"><a class="btn btn-success btn-block" href="/">Main menu</a></div>
+    </div>
+</div>
+</body>
+</html>

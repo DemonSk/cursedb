@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Query results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+</br>
+<div class = whole_table th:if="${WinterPenalty != NULL}">
+    <h2 style="color: white; text-align: center;">Winter Penalty</h2>
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Penalty type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Penalty:${WinterPenalty}"}>
+            <td th:text="${Penalty}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div><a class="btn btn-success btn-block" href="/">Main menu</a></div>
+</div>
+
+<div class = whole_table th:if="${PenaltySum != NULL}">
+    <h2 style="color: white; text-align: center;">Penalty Sum</h2>
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Penalty type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="PenaltySum:${PenaltySum}"}>
+            <td th:text="${PenaltySum}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div><a class="btn btn-success btn-block" href="/">Main menu</a></div>
+</div>
+
+<div class = whole_table th:if="${PenaltyByDriver != NULL}">
+    <h2 style="color: white; text-align: center;">Penalty By Driver</h2>
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Penalty By Driver</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="PenaltyByDriver:${PenaltyByDriver}"}>
+            <td th:text="${PenaltyByDriver}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div><a class="btn btn-success btn-block" href="/">Main menu</a></div>
+</div>
+
+<div class = whole_table th:if="${PenaltyPay != NULL}">
+    <h2 style="color: white; text-align: center;">Penalty Pay</h2>
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Penalty Pay</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="PenaltyPay:${PenaltyPay}"}>
+            <td th:text="${PenaltyPay}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div><a class="btn btn-success btn-block" href="/">Main menu</a></div>
+</div>
+<div class = whole_table th:if="${MaxPenalties != NULL}">
+    <h2 style="color: white; text-align: center;">Max Penalties</h2>
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Max Penalties</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="MaxPenalties:${MaxPenalties}"}>
+            <td th:text="${MaxPenalties}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div><a class="btn btn-success btn-block" href="/">Main menu</a></div>
+</div>
+<div class = whole_table th:if="${AllPenalties != NULL}">
+    <h2 style="color: white; text-align: center;">All Penalties</h2>
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">All Penalties</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="AllPenalties:${AllPenalties}"}>
+            <td th:text="${AllPenalties}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div><a class="btn btn-success btn-block" href="/">Main menu</a></div>
+</div>
+<div class = whole_table th:if="${QuaterTicket != NULL}">
+    <h2 style="color: white; text-align: center;">Quater Ticket</h2>
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Quater Ticket</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="QuaterTicket:${QuaterTicket}"}>
+            <td th:text="${QuaterTicket}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div><a class="btn btn-success btn-block" href="/">Main menu</a></div>
+</div>
+<div class = whole_table th:if="${LastMonthPay != NULL}">
+    <h2 style="color: white; text-align: center;">Last Month Pay</h2>
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Last Month Pay</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="LastMonthPay:${LastMonthPay}"}>
+            <td th:text="${LastMonthPay}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div><a class="btn btn-success btn-block" href="/">Main menu</a></div>
+</div>
+</body>
+</html>

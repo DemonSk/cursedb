@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Inspector</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<form action="#" th:action="@{/Inspector-create}" th:object="${Inspector}" method="post">
+    <label for="lastname">lastname</label>
+    <input type="text" th:field="*{lastname}" id="lastname" placeholder="lastname" required>
+    <br/>
+    <label for="rank">rank</label>
+    <input type="text" th:field="*{rank}" id="rank" placeholder="rank" required>
+    <br/>
+    <input type="submit" value="Create Inspector">
+</form>
+</body>
+</html>

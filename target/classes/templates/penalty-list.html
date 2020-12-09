@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctors</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div id="whole_table" th:switch="${Penalties}">
+    <h2 style="color: white; text-align: center;" th:case="null">No Tickets found!</h2>
+    <div th:case="*">
+        <h2 style="color: white; text-align: center;" >Penalties</h2>
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th scope="col">Penalty ID</th>
+                <th scope="col">Type</th>
+                <th scope="col">Cost</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="Penalty : ${Penalties}">
+                <td th:text="${Penalty.PenaltyID}"></td>
+                <td th:text="${Penalty.penaltytype}"></td>
+                <td th:text="${Penalty.penaltycost}"></td>
+                <td style="cursor: pointer; text-align: center;" th:onclick="|window.location.href='@{Penalty-update/{id}(id=${Penalty.PenaltyID})}'|">Edit</a></td>
+                <td style="cursor: pointer; text-align: center;" th:onclick="|window.location.href='@{Penalty-delete/{id}(id=${Penalty.PenaltyID})}'|">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col"><a class="btn btn-primary btn-block" href="/doctor-create">Create penalty</a></div>
+        <div class="col"><a class="btn btn-success btn-block" href="/">Main menu</a></div>
+    </div>
+</div>
+</body>
+</html>

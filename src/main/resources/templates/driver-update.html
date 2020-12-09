@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update Driver</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<form action="#" th:action="@{/Driver-update}" th:object="${Driver}" method="post">
+    <label for="DriverID">ID</label>
+    <input readonly type="number" th:field="*{DriverID}" id="DriverID" placeholder="DriverID">
+    <br/>
+    <label for="fullname">fullname</label>
+    <input type="text" th:field="*{fullname}" id="fullname" placeholder="fullname" required>
+    <br/>
+    <label for="passport">passport</label>
+    <input type="text" th:field="*{passport}" id="passport" placeholder="passport" required>
+    <br/>
+    <label for="platenum">platenum</label>
+    <input type="text" th:field="*{platenum}" id="platenum" placeholder="platenum" required>
+    <br/>
+    <label for="drivinglicence">passport</label>
+    <input type="text" th:field="*{drivinglicence}" id="drivinglicence" placeholder="drivinglicence" required>
+    <br/>
+    <label for="dltime">dltime</label>
+    <input type="date" th:field="*{dltime}" id="dltime" placeholder="dltime" required>
+    <br/>
+    <input type="submit" value="Update Driver">
+</form>
+</body>
+</html>

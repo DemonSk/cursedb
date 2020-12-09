@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update Ticket</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<form class="form-1" action="#" th:action="@{/Ticket-update}" th:object="${Ticket}" method="post">
+    <label for="id">ID</label>
+    <input class="form-control" readonly type="number" th:field="*{id}" id="id" placeholder="ID" required>
+    <br/>
+    <label for="ticketdate">ticket date</label>
+    <input type="date" th:field="*{ticketdate}" id="ticketdate" placeholder="ticketdate" required>
+    <br/>
+    <label for="penaltyid">penalty id</label>
+    <input type="number" th:field="*{penaltyid}" id="penaltyid" placeholder="penaltyid" required>
+    <br/>
+    <label for="inspectorid">inspector id</label>
+    <input type="number" th:field="*{inspectorid}" id="inspectorid" placeholder="inspectorid" required>
+    <br/>
+    <label for="personid">person id</label>
+    <input type="number" th:field="*{personid}" id="personid" placeholder="personid" required>
+    <br/>
+    <label for="payed">payed</label>
+    <input type="date" th:field="*{payed}" id="payed" placeholder="payed" required>
+    <br/>
+    <label for="cost">cost</label>
+    <input type="number" th:field="*{cost}" id="cost" placeholder="cost" required>
+    <br/>
+    <input class="btn btn-primary" type="submit" value="Update Ticket">
+</form>
+</body>
+</html>

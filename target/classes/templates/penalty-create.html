@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create penalty</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<form action="#" th:action="@{/Penalty-create}" th:object="${Penalty}" method="post">
+    <label for="penaltytype">penalty type</label>
+    <input type="text" th:field="*{penaltytype}" id="penaltytype" placeholder="penaltytype" required>
+    <br/>
+    <label for="penaltycost">penalty cost</label>
+    <input type="number" th:field="*{penaltycost}" id="penaltycost" placeholder="penaltycost" required>
+    <br/>
+    <input type="submit" value="Create penalty">
+</form>
+</body>
+</html>

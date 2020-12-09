@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Ticket</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<form action="#" th:action="@{/ticket-create}" th:object="${ticket}" method="post">
+    <label for="ticketdate">ticket date</label>
+    <input type="date" th:field="*{ticketdate}" id="ticketdate" placeholder="ticketdate" required min="1">
+    <br/>
+    <label for="penaltyid">penalty id</label>
+    <input type="number" th:field="*{penaltyid}" id="penaltyid" placeholder="penaltyid" required min="1">
+    <br/>
+    <label for="inspectorid">inspector id</label>
+    <input type="number" th:field="*{inspectorid}" id="inspectorid" placeholder="inspectorid" required min="1">
+    <br/>
+    <label for="personid">person id</label>
+    <input type="number" th:field="*{personid}" id="personid" placeholder="personid" required min="1">
+    <br/>
+    <label for="payed">payed</label>
+    <input type="date" th:field="*{payed}" id="payed" placeholder="payed" required>
+    <br/>
+    <label for="cost">cost</label>
+    <input type="number" th:field="*{cost}" id="cost" placeholder="cost" required>
+    <br/>
+    <input type="submit" value="Create Ticket">
+</form>
+</body>
+</html>
